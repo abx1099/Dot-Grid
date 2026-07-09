@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/addons/p5.sound.min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <main></main>
+    <script>
+      p5.disableFriendlyErrors = true; // put this above setup()
+      let palette = ['#f4b5de', '#dff700', '#fa58a7', '#3f22ec', '#03e29d', '#efca62'];
+
+      function setup() {
+        createCanvas(600, 600);
+      }
+
+      function draw() {
+        background(10);
+        for (let x = 20; x < width; x += 25) {
+          for (let y = 20; y < height; y += 25) {
+            noStroke();
+            fill(random(palette));
+            let d = dist(x, y, mouseX, mouseY);
+            let size1 = map(d, 0, 800, 20, 2);
+            ellipse(x, y, size1, size1);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
