@@ -22,7 +22,11 @@
       let palette = ['#f4b5de', '#dff700', '#fa58a7', '#3f22ec', '#03e29d', '#efca62'];
 
       function setup() {
-        createCanvas(2000, 2000);
+        createCanvas(windowWidth, windowHeight);
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
       }
 
       function draw() {
